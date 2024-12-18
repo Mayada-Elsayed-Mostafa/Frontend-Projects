@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag Image Example</title>
+</head>
+
+<body>
+    <img src="R.jpeg" id="draggableImage" draggable="true" alt="Draggable Image" width="300" style="position: absolute; cursor: move;">
+
+    <script>
+        let image = document.getElementById("draggableImage");
+
+        let offsetX = 0;
+        let offsetY = 0;
+
+        image.addEventListener("dragstart", (event) => {
+            offsetX = event.offsetX;
+            offsetY = event.offsetY;
+        });
+
+        image.addEventListener("drag", (event) => {
+
+            if (event.pageX > 0 && event.pageY > 0) {
+                image.style.left = `${event.pageX - offsetX}px`;
+                image.style.top = `${event.pageY - offsetY}px`;
+            }
+        });
+        
+    </script>
+</body>
+</html>

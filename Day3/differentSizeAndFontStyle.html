@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Different size and font style</title>
+    </head>
+    <body>
+        <script>
+            
+            let fontSizes = ["16px", "20px", "24px", "28px", "32px"];
+            let fontStyles = ["normal", "italic", "bold", "oblique", "italic bold"];
+
+            for (let i = 0; i < fontSizes.length; i++) {
+                document.write(`<p style="font-size: ${fontSizes[i]}; font-style: ${fontStyles[i % fontStyles.length]};">
+                                    Javascript using font size ${fontSizes[i]} and font style ${fontStyles[i]}.
+                                </p><br>`);
+            }
+            
+        </script>
+    </body>
+</html>

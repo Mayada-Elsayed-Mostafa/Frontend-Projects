@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Sentence into Words</title>
+</head>
+<body>
+    <h2>Enter Sentence to Split into Words</h2>
+    <input type="text" id="substring" placeholder="Enter your sentence">
+    <p>Split by:</p>
+    <input type="text" id="splitMark" placeholder="Enter split marker">
+    <input type="button" value="Split" onclick="splitFun()">
+
+    <h3>The Sentence split into words is:</h3>
+    <p id="result"></p>
+    <p id="first10chars"></p>
+
+    <script>
+        function splitFun() {
+            let sentence = document.getElementById("substring").value;
+            let splitMark = document.getElementById("splitMark").value;
+
+            if (!sentence) {
+                document.getElementById("result").innerHTML = "Please enter a valid sentence.";
+                return;
+            }
+            
+            if (!splitMark) {
+                document.getElementById("result").innerHTML = "Please enter a valid split marker.";
+                return;
+            }
+
+            let words = sentence.split(splitMark);
+
+            document.getElementById("result").innerHTML = words.join("<br>");
+
+            document.getElementById("first10chars").innerHTML = 
+            `The first 10 characters of the input string are: ${sentence.slice(0, 10)}`;        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Max and Min Numbers</title>
+    </head>
+    <body>
+        <div id="firstNum"></div>
+        <div id="secondNum"></div>
+        <div id="thirdNum"></div>
+        <div id="maxNum"></div>
+        <div id="minNum"></div>
+
+        <script>
+            let firstNum = parseFloat(window.prompt("Enter the first Number... "));
+            let secondNum = parseFloat(window.prompt("Enter the second Number... "));
+            let thirdNum = parseFloat(window.prompt("Enter the third Number... "));
+
+            document.getElementById("firstNum").innerHTML = `<p>First Number: ${firstNum}</p>`;
+            document.getElementById("secondNum").innerHTML = `<p>Second Number: ${secondNum}</p>`;
+            document.getElementById("thirdNum").innerHTML = `<p>Third Number: ${thirdNum}</p>`;
+
+            document.getElementById("maxNum").innerHTML = `<p>Max Number: ${Math.max(firstNum, secondNum, thirdNum)}</p>`;  
+            document.getElementById("minNum").innerHTML = `<p>Min Number: ${Math.min(firstNum, secondNum, thirdNum)}</p>`;       
+        </script>
+    </body>
+</html>

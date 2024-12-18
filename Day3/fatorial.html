@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorials of 1 to 10</title>
+    
+</head>
+<body>
+    <h2 style="text-align: center;">Factorials of 1 to 10</h2>
+    <input type="button" value="Generate Factorials" onclick="generateFactorials()">
+    <table>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Factorial</th>
+            </tr>
+        </thead>
+        <tbody id="factorialTable">
+        </tbody>
+    </table>
+    <script>
+        function factorial(num) {
+            if (num === 0 || num === 1) return 1;
+            return num * factorial(num - 1);
+        }
+
+        function generateFactorials() {
+            const tableBody = document.getElementById("factorialTable");
+            tableBody.innerHTML = "";
+            for (let i = 1; i <= 10; i++) {
+                const row = document.createElement("tr");
+                const numberCell = document.createElement("td");
+                const factorialCell = document.createElement("td");
+
+                numberCell.textContent = i;
+                factorialCell.textContent = factorial(i);
+
+                row.appendChild(numberCell);
+                row.appendChild(factorialCell);
+                tableBody.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
